@@ -9,7 +9,7 @@ preventing cross-fold data leakage and guaranteeing deployment portability.
 
 Author: Sumarjana Biswas (sumarjanabiswas690@gmail.com)
 Project: Machine Learning Model Development & Evaluation Plan (Week 3)
-Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3
+Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 import warnings

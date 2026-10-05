@@ -1,7 +1,7 @@
 /**
  * ChurnGuard-ML Frontend Application Controller
  * Author: Sumarjana Biswas (sumarjanabiswas690@gmail.com)
- * Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3
+ * Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
  */
 
 const API_BASE = window.location.origin;

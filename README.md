@@ -6,7 +6,7 @@
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
 [![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E.svg)](https://scikit-learn.org/)
 
-**Repository**: [https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3](https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3)  
+**Repository**: [https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan](https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan)  
 **Author**: **Sumarjana Biswas** ([sumarjanabiswas690@gmail.com](mailto:sumarjanabiswas690@gmail.com))  
 **Milestone**: Week 3 - Python-Based Machine Learning Model Development & Evaluation Plan  
 
@@ -98,8 +98,8 @@ The end-to-end machine learning system is architected into six modular engineeri
 ### Setup Virtual Environment
 ```bash
 # Clone the repository
-git clone https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3.git
-cd Machine-Learning-Development-Plan-Week3
+git clone https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan.git
+cd Machine-Learning-Development-Plan
 
 # Create and activate virtual environment
 python -m venv venv
@@ -249,5 +249,5 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 
 - **Lead Data Science Architect**: **Sumarjana Biswas**
 - **Email**: [sumarjanabiswas690@gmail.com](mailto:sumarjanabiswas690@gmail.com)
-- **Repository**: [https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3](https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3)
+- **Repository**: [https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan](https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan)
 - **License**: MIT

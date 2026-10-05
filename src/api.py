@@ -11,7 +11,7 @@ Implements:
 
 Author: Sumarjana Biswas (sumarjanabiswas690@gmail.com)
 Project: Machine Learning Model Development & Evaluation Plan (Week 3)
-Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3
+Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 import os
@@ -36,7 +36,7 @@ app = FastAPI(
     contact={
         "name": "Sumarjana Biswas",
         "email": "sumarjanabiswas690@gmail.com",
-        "url": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3"
+        "url": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan"
     }
 )
 
@@ -125,7 +125,7 @@ def read_root(request: Request):
         "service": "ChurnGuard-ML Inference API",
         "author": "Sumarjana Biswas",
         "email": "sumarjanabiswas690@gmail.com",
-        "repository": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3",
+        "repository": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan",
         "status": "Online",
         "documentation": "/docs",
         "frontend_ui": "/ui"

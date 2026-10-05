@@ -12,7 +12,7 @@ Generates:
 
 Author: Sumarjana Biswas (sumarjanabiswas690@gmail.com)
 Project: Machine Learning Model Development & Evaluation Plan (Week 3)
-Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3
+Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 import os
@@ -204,7 +204,7 @@ def run_evaluation_suite(
             'author': artifact.get('author', 'Sumarjana Biswas'),
             'email': 'sumarjanabiswas690@gmail.com',
             'version': artifact.get('version', '1.0.0'),
-            'repository': 'https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3',
+            'repository': 'https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan',
             'sample_count': int(len(y_test)),
             'churn_prevalence': round(float(np.mean(y_test)), 4)
         },
