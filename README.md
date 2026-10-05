@@ -8,7 +8,7 @@
 
 **Repository**: [https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan](https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan)  
 **Author**: **Sumarjana Biswas** ([sumarjanabiswas690@gmail.com](mailto:sumarjanabiswas690@gmail.com))  
-**Milestone**: Week 3 - Python-Based Machine Learning Model Development & Evaluation Plan  
+**Milestone**: Weeks 1–4 Capstone — Comprehensive Data Science Lifecycle & Executive Presentation Plan  
 
 ---
 
@@ -17,6 +17,15 @@
 In subscription Software-as-a-Service (SaaS) and digital cloud platforms, recurring customer retention is the primary determinant of long-term unit economics. **ChurnGuard-ML** is a production-grade machine learning system designed to predict high-risk account churn 60 to 90 days before contract expiration across a customer base of 100,000 enterprise accounts with a baseline annual churn rate of ~12.0%.
 
 By intercepting high-flight-risk customers ahead of contract renewal deadlines, Customer Success Managers (CSMs) deploy targeted retention interventions, recovering recurring Annual Recurring Revenue (ARR) and maximizing Net Revenue Retention (NRR).
+
+### Progressive Internship Milestones & Deliverables Roadmap
+
+| Milestone | Deliverable File | Core Topic & Focus Area | Scope & Word Count | Embedded Visuals |
+| :--- | :--- | :--- | :--- | :--- |
+| **Week 1** | [`Data_Science_Project_Plan_Week_1.docx`](docs/Data_Science_Project_Plan_Week_1.docx) | **ChurnGuard AI**: Predictive Retention Planning & Strategic Architecture | 3,827 words | 3 Strategic Diagrams (Lifecycle, ML Architecture, 32.5h Gantt) |
+| **Week 2** | [`EDA_and_Visualization_Framework_Week_2.docx`](docs/EDA_and_Visualization_Framework_Week_2.docx) | **OmniEDA**: Diagnostic Exploratory Data Analysis & Visualization Framework | 2,947 words | 3 Diagnostic Visuals (EDA Lifecycle, Plot Matrix, 32.5h Gantt) |
+| **Week 3** | [`Machine_Learning_Model_Development_Plan_Week_3.docx`](docs/Machine_Learning_Model_Development_Plan_Week_3.docx) | **ChurnGuard-ML**: Python-Based ML Development, Evaluation & Serving Plan | 3,456 words | 3 Technical Visuals (ML Pipeline, Validation Hierarchy, 32.5h Gantt) |
+| **Week 4** | [`Comprehensive_Data_Science_Report_and_Presentation_Plan_Week_4.docx`](docs/Comprehensive_Data_Science_Report_and_Presentation_Plan_Week_4.docx) | **Executive Synthesis**: Comprehensive Report & Non-Technical Presentation Plan | 4,512 words | 3 Executive Visuals (Insights Mock-Up, SCQA Framework, 90-Day Rollout) |
 
 ---
 
@@ -64,9 +73,10 @@ The end-to-end machine learning system is architected into six modular engineeri
 │   ├── customer_telemetry.csv      # Synthesized 25,000-account enterprise dataset
 │   └── test_holdout.csv            # Stratified held-out test cohort
 ├── docs/                           # Comprehensive documentation & submission deliverables
-│   ├── Data_Science_Project_Plan_Week_1.docx             # Week 1 Final Submission Document
-│   ├── EDA_and_Visualization_Framework_Week_2.docx       # Week 2 Final Submission Document
-│   ├── Machine_Learning_Model_Development_Plan_Week_3.docx # Week 3 Final Submission Document
+│   ├── Data_Science_Project_Plan_Week_1.docx                           # Week 1 Final Submission Document
+│   ├── EDA_and_Visualization_Framework_Week_2.docx                     # Week 2 Final Submission Document
+│   ├── Machine_Learning_Model_Development_Plan_Week_3.docx               # Week 3 Final Submission Document
+│   ├── Comprehensive_Data_Science_Report_and_Presentation_Plan_Week_4.docx # Week 4 Final Submission Document
 │   ├── generators/                 # Python scripts compiling the DOCX files & diagrams
 │   └── archive/                    # Backup and versioned variants
 ├── models/
@@ -81,6 +91,10 @@ The end-to-end machine learning system is architected into six modular engineeri
 │   ├── train.py                    # 5-Fold Stratified CV, multi-model benchmarking, and calibration
 │   ├── evaluate.py                 # Confusion matrix arithmetic, calibration error, and cost matrix
 │   └── api.py                      # FastAPI REST microservice (/predict, /batch_predict, /health)
+├── static/
+│   ├── index.html                  # Minimalist web testing frontend
+│   ├── styles.css                  # Minimalist design system tokens & dark theme
+│   └── app.js                      # Real-time API connector, gauge, and batch simulation
 ├── tests/
 │   └── test_api.py                 # Automated integration and unit test suite
 ├── requirements.txt                # Production environment dependencies
