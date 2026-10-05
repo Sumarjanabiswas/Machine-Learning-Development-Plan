@@ -16,6 +16,9 @@ Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 import os
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+
 import joblib
 import numpy as np
 import pandas as pd

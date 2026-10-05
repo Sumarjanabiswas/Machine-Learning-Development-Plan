@@ -13,11 +13,14 @@ Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+
 from typing import List, Optional
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer, KNNImputer
 from sklearn.preprocessing import RobustScaler, OneHotEncoder, TargetEncoder
+from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
@@ -59,7 +62,8 @@ def build_preprocessor(
     
     if categorical_encoder == 'target':
         try:
-            cat_encoder = TargetEncoder(smooth='auto', cv=5, random_state=42)
+            cv_strat = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+            cat_encoder = TargetEncoder(smooth='auto', cv=cv_strat)
         except Exception:
             cat_encoder = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
     else:
@@ -137,7 +141,6 @@ def build_pipeline(
         )
     elif model_type == 'logistic_regression':
         classifier = LogisticRegression(
-            penalty='l2',
             C=1.0,
             class_weight='balanced',
             max_iter=1000,
