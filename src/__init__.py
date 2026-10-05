@@ -3,7 +3,7 @@ ChurnGuard-ML: Enterprise Customer Churn Prediction & Risk Mitigation System
 =============================================================================
 Author: Sumarjana Biswas (sumarjanabiswas690@gmail.com)
 Project: Machine Learning Model Development and Evaluation Plan (Week 3)
-Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan
+Repository: https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan
 """
 
 __version__ = "1.0.0"

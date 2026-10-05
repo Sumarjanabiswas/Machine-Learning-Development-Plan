@@ -194,7 +194,7 @@ def build_ml_plan_document(output_path):
         footer = s.footer
         fp = footer.paragraphs[0]
         fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        frun = fp.add_run("GitHub Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan  |  sumarjanabiswas690@gmail.com")
+        frun = fp.add_run("GitHub Repository: https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan  |  sumarjanabiswas690@gmail.com")
         frun.font.name = "Calibri"
         frun.font.size = Pt(8.5)
         frun.font.color.rgb = RGBColor(0x94, 0xA3, 0xB8)
@@ -240,7 +240,7 @@ def build_ml_plan_document(output_path):
     r_meta.font.size = Pt(9.5)
     r_meta.font.color.rgb = RGBColor(0x94, 0xA3, 0xB8)
 
-    r_git = cp.add_run("Compulsory Project Repository: https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan")
+    r_git = cp.add_run("Compulsory Project Repository: https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan")
     r_git.bold = True
     r_git.font.name = "Calibri"
     r_git.font.size = Pt(9.5)
@@ -269,7 +269,7 @@ def build_ml_plan_document(output_path):
     meta_widths = [Inches(2.2), Inches(4.7)]
     meta_data = [
         ("Project Lead & Author", "Sumarjana Biswas (sumarjanabiswas690@gmail.com)"),
-        ("Project Repository URL", "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan"),
+        ("Project Repository URL", "https://github.com/Sumarjanabiswas/Machine-Learning-Development-Plan"),
         ("Problem Statement", "Predictive Enterprise Customer Churn & High-Risk Propensity Classification (ChurnGuard-ML)"),
         ("Modeling Paradigm", "Supervised Binary Classification under Class Imbalance (~12.0% Positive Churn Rate)"),
         ("Champion Architecture", "LightGBM Classifier with Scikit-Learn ColumnTransformer and Isotonic Calibration"),
