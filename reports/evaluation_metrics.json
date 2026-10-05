@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "author": "Sumarjana Biswas",
+    "email": "sumarjanabiswas690@gmail.com",
+    "version": "1.0.0",
+    "repository": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3",
+    "sample_count": 6250,
+    "churn_prevalence": 0.1138
+  },
+  "global_metrics": {
+    "roc_auc": 0.7467,
+    "pr_auc": 0.3322,
+    "brier_score": 0.0891,
+    "expected_calibration_error": 0.0106
+  },
+  "threshold_evaluations": {
+    "default_0_50": {
+      "threshold": 0.5,
+      "TP": 72,
+      "FP": 59,
+      "FN": 639,
+      "TN": 5480,
+      "accuracy": 0.8883,
+      "precision": 0.5496,
+      "recall": 0.1013,
+      "specificity": 0.9893,
+      "f1_score": 0.171,
+      "balanced_accuracy": 0.5453,
+      "contacted_accounts": 131,
+      "campaign_outreach_cost": 19650.0,
+      "rescued_accounts": 25.2,
+      "gross_arr_retained": 211680.0,
+      "net_campaign_profit": 192030.0,
+      "roi_percentage": 977.25
+    },
+    "optimal_0_35": {
+      "threshold": 0.35,
+      "TP": 158,
+      "FP": 191,
+      "FN": 553,
+      "TN": 5348,
+      "accuracy": 0.881,
+      "precision": 0.4527,
+      "recall": 0.2222,
+      "specificity": 0.9655,
+      "f1_score": 0.2981,
+      "balanced_accuracy": 0.5939,
+      "contacted_accounts": 349,
+      "campaign_outreach_cost": 52350.0,
+      "rescued_accounts": 55.3,
+      "gross_arr_retained": 464520.0,
+      "net_campaign_profit": 412170.0,
+      "roi_percentage": 787.34
+    },
+    "aggressive_0_20": {
+      "threshold": 0.2,
+      "TP": 302,
+      "FP": 587,
+      "FN": 409,
+      "TN": 4952,
+      "accuracy": 0.8406,
+      "precision": 0.3397,
+      "recall": 0.4248,
+      "specificity": 0.894,
+      "f1_score": 0.3775,
+      "balanced_accuracy": 0.6594,
+      "contacted_accounts": 889,
+      "campaign_outreach_cost": 133350.0,
+      "rescued_accounts": 105.7,
+      "gross_arr_retained": 887880.0,
+      "net_campaign_profit": 754530.0,
+      "roi_percentage": 565.83
+    }
+  },
+  "financial_assumptions": {
+    "customer_lifetime_value_usd": 8400.0,
+    "csm_outreach_cost_usd": 150.0,
+    "intervention_rescue_success_rate": 0.35,
+    "net_profit_lift_from_tuning_usd": 220140.0
+  }
+}
