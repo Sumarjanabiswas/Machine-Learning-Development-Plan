@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChurnGuard-ML | Enterprise Churn Intelligence & Risk Mitigation Platform</title>
+  <meta name="description" content="Production-grade Machine Learning model testing interface and interactive decision simulation platform for ChurnGuard-ML.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header Navigation -->
+    <header class="navbar">
+      <div class="brand-section">
+        <div class="brand-logo">CG</div>
+        <div class="brand-text">
+          <h1>ChurnGuard-ML Enterprise Intelligence</h1>
+          <p>Production Risk Mitigation & Calibrated Decision API • Week 3 Applied ML Blueprint</p>
+        </div>
+      </div>
+      
+      <div class="nav-badges">
+        <div class="badge badge-health" id="health-badge">
+          <span class="pulse-dot"></span>
+          <span>Checking API...</span>
+        </div>
+        <a href="https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3" target="_blank" class="badge author-pill">
+          <span>Author: Sumarjana Biswas</span>
+          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-bar">
+      <button class="tab-btn active" data-tab="tab-predict">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span>Single Account Simulator</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-batch">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        <span>Batch CRM Scoring</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-architecture">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <span>System Diagnostics & ROI</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: Single Account Simulator -->
+    <main id="tab-predict" class="tab-panel active">
+      <div class="predict-grid">
+        
+        <!-- Left Column: Input Form -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              <span>Customer Telemetry Profile</span>
+            </h2>
+            <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">SCHEMA: POST /predict</span>
+          </div>
+
+          <!-- Quick Presets -->
+          <div class="presets-group">
+            <span style="font-size: 12px; color: var(--text-muted); align-self: center; font-weight: 600;">Load Scenario:</span>
+            <button type="button" class="preset-btn preset-risk" data-preset="highRisk">
+              <span>🚨 High Flight Risk</span>
+            </button>
+            <button type="button" class="preset-btn" data-preset="moderate">
+              <span>⚠️ Moderate Drift</span>
+            </button>
+            <button type="button" class="preset-btn preset-safe" data-preset="healthy">
+              <span>🟢 Healthy Power User</span>
+            </button>
+          </div>
+
+          <form id="predict-form">
+            <!-- Group 1: Contract & Structural -->
+            <div class="form-section-title">1. Contract & Structural Profile</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="account_id">Account ID</label>
+                <input class="form-input" type="text" id="account_id" required value="ACC-10492">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="tenure_months">Tenure <span class="desc">(Months)</span></label>
+                <input class="form-input" type="number" id="tenure_months" min="1" max="120" value="7">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contract_arr">Contract ARR <span class="desc">($ USD)</span></label>
+                <input class="form-input" type="number" step="100" id="contract_arr" min="100" value="14400">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contract_tier">Contract Tier</label>
+                <select class="form-select" id="contract_tier">
+                  <option value="Starter">Starter</option>
+                  <option value="Growth" selected>Growth</option>
+                  <option value="Enterprise">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="industry">Industry Sector</label>
+                <select class="form-select" id="industry">
+                  <option value="Technology" selected>Technology</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Retail">Retail</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="billing_cycle">Billing Cadence</label>
+                <select class="form-select" id="billing_cycle">
+                  <option value="Monthly" selected>Monthly (High Fluidity)</option>
+                  <option value="Annual">Annual (Contracted)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Group 2: Behavioral Usage & Velocity -->
+            <div class="form-section-title">2. Usage Momentum & Telemetry</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="licensed_seats">Licensed Seats</label>
+                <input class="form-input" type="number" id="licensed_seats" min="1" value="25">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="active_seats">Active Seats <span class="desc">(30d)</span></label>
+                <input class="form-input" type="number" id="active_seats" min="0" value="8">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="trailing_30d_logins">Trailing 30d Logins</label>
+                <input class="form-input" type="number" id="trailing_30d_logins" min="0" value="6">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="trailing_90d_logins">Trailing 90d Logins</label>
+                <input class="form-input" type="number" id="trailing_90d_logins" min="0" value="140">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="api_calls_30d">API Calls (30d)</label>
+                <input class="form-input" type="number" id="api_calls_30d" min="0" value="850">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="feature_exports_30d">Reports Exported</label>
+                <input class="form-input" type="number" id="feature_exports_30d" min="0" value="2">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="storage_used_gb">Storage Used (GB)</label>
+                <input class="form-input" type="number" step="0.5" id="storage_used_gb" min="0" value="18.5">
+              </div>
+            </div>
+
+            <!-- Group 3: Support Friction & CSAT -->
+            <div class="form-section-title">3. Support Health & Friction Indicators</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="open_escalated_tickets">Open Escalations</label>
+                <input class="form-input" type="number" id="open_escalated_tickets" min="0" max="10" value="3">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="avg_resolution_hours">Avg Resolution (Hours)</label>
+                <input class="form-input" type="number" step="0.5" id="avg_resolution_hours" min="0" value="64">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="monthly_ticket_minutes">Ticket Minutes</label>
+                <input class="form-input" type="number" step="1" id="monthly_ticket_minutes" min="0" value="240">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="csat_score">CSAT Rating <span class="desc">(1 to 5)</span></label>
+                <input class="form-input" type="number" step="0.5" id="csat_score" min="1" max="5" value="1.0">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btn-submit-predict">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Evaluate Churn Propensity</span>
+            </button>
+          </form>
+        </section>
+
+        <!-- Right Column: Inference Result Display -->
+        <aside class="result-display">
+          
+          <!-- Animated Gauge Card -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Calibrated Churn Probability</span>
+              </h2>
+              <span class="badge" style="font-size: 11px;">CUTOFF t* = 0.35</span>
+            </div>
+
+            <div class="meter-box">
+              <svg class="gauge-svg" viewBox="0 0 220 120">
+                <path class="gauge-bg" d="M 20 110 A 90 90 0 0 1 200 110" />
+                <path class="gauge-fill" id="gauge-arc" d="M 20 110 A 90 90 0 0 1 200 110" />
+              </svg>
+              <div class="gauge-value-text">
+                <div class="val" id="gauge-value">--%</div>
+                <div class="lbl">Predicted Probability</div>
+              </div>
+            </div>
+
+            <!-- Risk Banner -->
+            <div class="risk-banner tier-high" id="risk-banner" style="margin-top: 18px;">
+              <div class="risk-banner-title">
+                <span id="risk-tier-title">HIGH RISK TIER</span>
+              </div>
+              <div class="risk-banner-status" id="risk-tier-status">ACTION REQUIRED</div>
+            </div>
+
+            <!-- Computed Domain Signals -->
+            <div style="margin-top: 20px;">
+              <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">
+                Engineered Domain Signals (Real-Time):
+              </div>
+              <div class="signals-grid">
+                <div class="signal-pill">
+                  <div class="signal-lbl">Activity Velocity</div>
+                  <div class="signal-val" id="signal-velocity">0.13x</div>
+                </div>
+                <div class="signal-pill">
+                  <div class="signal-lbl">Seat Utilization</div>
+                  <div class="signal-val" id="signal-seats">32%</div>
+                </div>
+                <div class="signal-pill">
+                  <div class="signal-lbl">Friction Index</div>
+                  <div class="signal-val" id="signal-friction">12.7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSM Playbook Recommendation Card -->
+          <div class="card playbook-box">
+            <div class="playbook-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>Recommended Customer Success Playbook</span>
+            </div>
+            <p class="playbook-text" id="playbook-guidance">
+              Priority 1: Trigger Executive CSM Retention Outreach. Investigate escalated tickets and schedule emergency contract review.
+            </p>
+          </div>
+
+          <!-- Payload Inspector -->
+          <div class="card">
+            <div class="card-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+              <h2 class="card-title" style="font-size: 13px;">API Response Payload (/predict)</h2>
+            </div>
+            <pre class="json-viewer" id="json-response">Waiting for model evaluation...</pre>
+          </div>
+
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- TAB 2: Batch CRM Scoring Engine -->
+    <main id="tab-batch" class="tab-panel">
+      <section class="card" style="margin-bottom: 24px;">
+        <div class="batch-toolbar">
+          <div>
+            <h2 class="card-title" style="font-size: 18px;">Automated Weekly CRM Account Scoring</h2>
+            <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
+              Batch inference endpoint (POST /batch_predict) scores accounts in bulk for CRM routing (Salesforce & HubSpot).
+            </p>
+          </div>
+          <button type="button" class="btn-submit" id="run-batch-btn" style="width: auto; margin-top: 0; padding: 10px 22px;">
+            <span>Score All Accounts</span>
+          </button>
+        </div>
+
+        <!-- KPI Metrics -->
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-label">Accounts Processed</div>
+            <div class="kpi-value" id="kpi-total">5</div>
+          </div>
+          <div class="kpi-card" style="border-left: 3px solid var(--accent-rose);">
+            <div class="kpi-label">High Risk (Outreach)</div>
+            <div class="kpi-value" style="color: var(--accent-rose);" id="kpi-high">3</div>
+          </div>
+          <div class="kpi-card" style="border-left: 3px solid var(--accent-amber);">
+            <div class="kpi-label">Medium Risk (Nurture)</div>
+            <div class="kpi-value" style="color: var(--accent-amber);" id="kpi-med">0</div>
+          </div>
+          <div class="kpi-card" style="border-left: 3px solid var(--accent-emerald);">
+            <div class="kpi-label">Low Risk (Healthy)</div>
+            <div class="kpi-value" style="color: var(--accent-emerald);" id="kpi-low">2</div>
+          </div>
+          <div class="kpi-card" style="border-left: 3px solid var(--accent-cyan);">
+            <div class="kpi-label">Gross ARR Protected</div>
+            <div class="kpi-value" style="color: var(--accent-cyan);" id="kpi-arr">$8,820</div>
+          </div>
+        </div>
+
+        <!-- Accounts Table -->
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Account ID</th>
+                <th>Risk Tier</th>
+                <th>Calibrated Probability</th>
+                <th>Retention Status</th>
+                <th>Recommended Action Playbook</th>
+              </tr>
+            </thead>
+            <tbody id="batch-table-body">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px;">
+                  Click "Score All Accounts" to evaluate batch cohort.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- TAB 3: System Diagnostics & ROI Architecture -->
+    <main id="tab-architecture" class="tab-panel">
+      <div class="predict-grid">
+        
+        <!-- Left: Architecture & Model Specs -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">Production Model Specifications & Governance</h2>
+          </div>
+
+          <div class="specs-grid" style="margin-bottom: 24px;">
+            <div>
+              <div class="spec-item"><span class="spec-k">Champion Algorithm:</span><span class="spec-v">HistGradientBoosting / LightGBM</span></div>
+              <div class="spec-item"><span class="spec-k">Framework:</span><span class="spec-v">Scikit-Learn ColumnTransformer</span></div>
+              <div class="spec-item"><span class="spec-k">Probability Calibration:</span><span class="spec-v">Isotonic Regression (cv=5)</span></div>
+              <div class="spec-item"><span class="spec-k">Decision Cutoff (t*):</span><span class="spec-v" id="spec-threshold">0.35</span></div>
+              <div class="spec-item"><span class="spec-k">Model Version:</span><span class="spec-v" id="spec-version">1.0.0</span></div>
+            </div>
+            <div>
+              <div class="spec-item"><span class="spec-k">Validation PR-AUC:</span><span class="spec-v" style="color:var(--accent-cyan);">0.6926</span></div>
+              <div class="spec-item"><span class="spec-k">Validation ROC-AUC:</span><span class="spec-v" style="color:var(--accent-cyan);">0.8846</span></div>
+              <div class="spec-item"><span class="spec-k">Post-Cal Brier Score:</span><span class="spec-v" style="color:var(--accent-emerald);">0.0891</span></div>
+              <div class="spec-item"><span class="spec-k">Expected Cal Error:</span><span class="spec-v" style="color:var(--accent-emerald);">0.0106</span></div>
+              <div class="spec-item"><span class="spec-k">Features Monitored:</span><span class="spec-v" id="spec-features">21 Features</span></div>
+            </div>
+          </div>
+
+          <div class="card-header" style="margin-top: 16px;">
+            <h2 class="card-title">Confusion Matrix Arithmetic (Holdout Cohort N=6,250)</h2>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; background: #050811; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); line-height: 1.8;">
+            <div>• True Positives (TP):  158 accounts  (Caught Churners)</div>
+            <div>• False Positives (FP): 191 accounts  (Intervention False Alarms)</div>
+            <div>• False Negatives (FN): 553 accounts  (Missed Churners)</div>
+            <div>• True Negatives (TN):  5,348 accounts (Healthy Accounts Protected)</div>
+            <div style="color: var(--accent-cyan); margin-top: 8px;">• Accuracy: 88.10% | Precision: 45.27% | Specificity: 96.55%</div>
+          </div>
+        </section>
+
+        <!-- Right: Financial Cost-Utility Matrix -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">Economic Cost-Utility & ROI Analysis</h2>
+          </div>
+
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 18px;">
+            Demonstrates why shifting from naive default <code>t=0.50</code> to the cost-optimal cutoff <code>t*=0.35</code> generates hundreds of thousands of dollars in incremental net business profit.
+          </p>
+
+          <div class="table-wrapper" style="margin-bottom: 20px;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Cutoff</th>
+                  <th>Outreach Cost</th>
+                  <th>Gross Retained</th>
+                  <th>Net Profit</th>
+                  <th>ROI %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>t = 0.50</td>
+                  <td>$19,650</td>
+                  <td>$211,680</td>
+                  <td>+$192,030</td>
+                  <td style="color:var(--accent-emerald);">977%</td>
+                </tr>
+                <tr style="background: rgba(2, 132, 199, 0.12); font-weight: 700;">
+                  <td style="color: var(--accent-cyan);">t* = 0.35 ★</td>
+                  <td>$52,350</td>
+                  <td>$464,520</td>
+                  <td style="color: var(--accent-emerald);">+$412,170</td>
+                  <td style="color:var(--accent-emerald);">787%</td>
+                </tr>
+                <tr>
+                  <td>t = 0.20</td>
+                  <td>$133,350</td>
+                  <td>$887,880</td>
+                  <td>+$754,530</td>
+                  <td style="color:var(--accent-amber);">565%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="padding: 16px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25);">
+            <div style="font-weight: 700; font-size: 13.5px; color: #6EE7B7; margin-bottom: 4px;">
+              Executive Financial Takeaway:
+            </div>
+            <p style="font-size: 12.5px; color: var(--text-main); line-height: 1.5;">
+              Threshold tuning captures 86 additional churning enterprise accounts, generating an extra <strong>+$220,140 in net profit</strong> compared to naive standard scoring, while preserving CSM operational capacity.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -34,7 +34,9 @@ from api import (
 
 def test_root_endpoint():
     """Verify API root endpoint metadata and author attribution."""
-    data = read_root()
+    from fastapi import Request
+    req = Request({"type": "http", "headers": [(b"accept", b"application/json")]})
+    data = read_root(req)
     assert data["service"] == "ChurnGuard-ML Inference API"
     assert data["author"] == "Sumarjana Biswas"
     assert "sumarjanabiswas" in data["repository"]

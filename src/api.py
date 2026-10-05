@@ -18,7 +18,10 @@ import os
 import joblib
 import pandas as pd
 from typing import List, Optional, Dict, Any
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from features import engineer_domain_features
@@ -36,6 +39,18 @@ app = FastAPI(
         "url": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3"
     }
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+STATIC_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
+if os.path.exists(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models", "champion_pipeline.joblib")
 _model_artifact: Optional[Dict[str, Any]] = None
@@ -98,18 +113,47 @@ class BatchPredictionResponse(BaseModel):
 
 
 # -----------------------------------------------------------------------------
-# REST API Endpoints
+# REST API Endpoints & Static UI Serving
 # -----------------------------------------------------------------------------
 @app.get("/", tags=["General"])
-def read_root():
+def read_root(request: Request):
+    accept = request.headers.get("accept", "")
+    index_file = os.path.join(STATIC_DIR, "index.html")
+    if "text/html" in accept and os.path.exists(index_file):
+        return FileResponse(index_file)
     return {
         "service": "ChurnGuard-ML Inference API",
         "author": "Sumarjana Biswas",
         "email": "sumarjanabiswas690@gmail.com",
         "repository": "https://github.com/sumarjanabiswas/Machine-Learning-Development-Plan-Week3",
         "status": "Online",
-        "documentation": "/docs"
+        "documentation": "/docs",
+        "frontend_ui": "/ui"
     }
+
+
+@app.get("/ui", tags=["Frontend"], include_in_schema=False)
+def serve_ui():
+    index_file = os.path.join(STATIC_DIR, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    raise HTTPException(status_code=404, detail="UI static files not found.")
+
+
+@app.get("/styles.css", include_in_schema=False)
+def serve_css():
+    css_file = os.path.join(STATIC_DIR, "styles.css")
+    if os.path.exists(css_file):
+        return FileResponse(css_file, media_type="text/css")
+    raise HTTPException(status_code=404, detail="CSS file not found.")
+
+
+@app.get("/app.js", include_in_schema=False)
+def serve_js():
+    js_file = os.path.join(STATIC_DIR, "app.js")
+    if os.path.exists(js_file):
+        return FileResponse(js_file, media_type="application/javascript")
+    raise HTTPException(status_code=404, detail="JavaScript file not found.")
 
 
 @app.get("/health", tags=["Monitoring"])
