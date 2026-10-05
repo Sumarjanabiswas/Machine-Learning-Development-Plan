@@ -83,6 +83,7 @@ The end-to-end machine learning system is architected into six modular engineeri
 │   └── api.py                      # FastAPI REST microservice (/predict, /batch_predict, /health)
 ├── tests/
 │   └── test_api.py                 # Automated integration and unit test suite
+├── streamlit_app.py                # Interactive Streamlit Risk Intelligence Dashboard
 ├── requirements.txt                # Production environment dependencies
 └── README.md                       # Comprehensive system documentation
 ```
@@ -147,6 +148,17 @@ Starts the asynchronous inference server on `http://127.0.0.1:8000`:
 python src/api.py
 ```
 Interactive Swagger documentation is available at `http://127.0.0.1:8000/docs`.
+
+### Step 6: Launch Interactive Streamlit Dashboard
+Launches the full interactive risk management application on `http://localhost:8501`:
+```bash
+streamlit run streamlit_app.py
+```
+Features 4 dedicated workspaces:
+- **🎯 Single Account Simulator**: Real-time attribute tuning, scenario presets, calibrated risk meter, domain indicators, and CSM Tactical Playbook.
+- **📊 Batch CRM Scoring Engine**: Multi-account cohort scoring, live KPI metric cards, and downloadable CSV exports.
+- **📈 Performance Diagnostics**: Model specs, test holdout metrics (ROC-AUC 0.7467, PR-AUC 0.3322, Brier 0.0891), and worked confusion matrix arithmetic.
+- **💰 Cost-Utility & ROI Analysis**: Interactive sliders for CLV, outreach cost, and rescue rate demonstrating net profit optimization.
 
 ---
 
