@@ -59,9 +59,16 @@ The end-to-end machine learning system is architected into six modular engineeri
 
 ```
 .
+├── assets/                         # Visual architectural diagrams (ML, EDA, and Project Life Cycles)
 ├── data/
 │   ├── customer_telemetry.csv      # Synthesized 25,000-account enterprise dataset
 │   └── test_holdout.csv            # Stratified held-out test cohort
+├── docs/                           # Comprehensive documentation & submission deliverables
+│   ├── Data_Science_Project_Plan_Week_1.docx             # Week 1 Final Submission Document
+│   ├── EDA_and_Visualization_Framework_Week_2.docx       # Week 2 Final Submission Document
+│   ├── Machine_Learning_Model_Development_Plan_Week_3.docx # Week 3 Final Submission Document
+│   ├── generators/                 # Python scripts compiling the DOCX files & diagrams
+│   └── archive/                    # Backup and versioned variants
 ├── models/
 │   └── champion_pipeline.joblib    # Serialized calibrated production model pipeline
 ├── reports/
@@ -74,6 +81,8 @@ The end-to-end machine learning system is architected into six modular engineeri
 │   ├── train.py                    # 5-Fold Stratified CV, multi-model benchmarking, and calibration
 │   ├── evaluate.py                 # Confusion matrix arithmetic, calibration error, and cost matrix
 │   └── api.py                      # FastAPI REST microservice (/predict, /batch_predict, /health)
+├── tests/
+│   └── test_api.py                 # Automated integration and unit test suite
 ├── requirements.txt                # Production environment dependencies
 └── README.md                       # Comprehensive system documentation
 ```

@@ -823,5 +823,5 @@ def build_eda_framework_document(output_path):
         raise PermissionError("All candidate file paths are currently locked by Word. Please close Word and retry.")
 
 if __name__ == "__main__":
-    output_docx = r"e:\Code Playground\Sumu\EDA_and_Visualization_Framework_Week_2.docx"
+    output_docx = r"e:\Code Playground\Sumu\docs\EDA_and_Visualization_Framework_Week_2.docx"
     build_eda_framework_document(output_docx)

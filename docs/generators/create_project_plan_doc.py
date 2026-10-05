@@ -923,5 +923,5 @@ def build_project_plan_document(output_path):
         raise PermissionError("All candidate file paths are currently locked by Word. Please close Word and retry.")
 
 if __name__ == "__main__":
-    output_docx = r"e:\Code Playground\Sumu\Data_Science_Project_Plan_Week_1.docx"
+    output_docx = r"e:\Code Playground\Sumu\docs\Data_Science_Project_Plan_Week_1.docx"
     build_project_plan_document(output_docx)

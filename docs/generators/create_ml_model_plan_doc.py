@@ -1196,5 +1196,5 @@ async def predict_churn_risk(payload: CustomerTelemetryPayload):
         raise PermissionError("All candidate file paths are currently locked by Word. Please close Word and retry.")
 
 if __name__ == "__main__":
-    output_docx = r"e:\Code Playground\Sumu\Machine_Learning_Model_Development_Plan_Week_3.docx"
+    output_docx = r"e:\Code Playground\Sumu\docs\Machine_Learning_Model_Development_Plan_Week_3.docx"
     build_ml_plan_document(output_docx)
